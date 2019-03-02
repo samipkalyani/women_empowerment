@@ -1,21 +1,33 @@
 const path = require('path');
 
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyparser = require('body-parser');
 
 
 const app = express();
 
-
-
 app.set('view engine', 'ejs');
-
 app.set('views', 'views');
 
-app.use('/auth',(req,res)=>{
-    res.render('auth');
-})
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
 
+
+//ROUTES
+const userRoutes = require('./routes/user');
+const companyRoutes = require('./routes1/company');
+const authRoutes = require('./routes/auth');
+const projectRoutes=require('./routes/projects')
+
+
+app.use(authRoutes);
+app.use(userRoutes);
+app.use(projectRoutes);
+app.use(companyRoutes)
+
+
+
+app.
 app.post('/user_login',(req,res)=>{
     res.render('user_login');
 })
@@ -24,22 +36,8 @@ app.post('/projects_login',(req,res)=>{
     res.render('projects_login');
 })
 
-app.post('/company_login',(req,res)=>{
-    res.render('company_login');
-})
-app.post('/xyz',(req,res)=>{
-    console.log(req.body);
-    res.send("COMPANY DETAILS FOUND");
-})
 
-app.get('/login_final',(req,res)=>{
-    
-    res.render('company_login_final');
-})
-app.post('/abc',(req,res)=>{
-    console.log(req.body);
-    res.send("COMPANY DETAILS FOUND");
-})
+
 
 
 
