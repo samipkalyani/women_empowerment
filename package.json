@@ -1,0 +1,26 @@
+{
+  "name": "women_empowerment",
+  "version": "1.0.0",
+  "description": "women empowerment project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samipkalyani/women_empowerment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samipkalyani/women_empowerment/issues"
+  },
+  "homepage": "https://github.com/samipkalyani/women_empowerment#readme"
+}
